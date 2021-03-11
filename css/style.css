@@ -1,0 +1,49 @@
+:root {
+  /* Se trabaja con una paleta de colores análoga */
+  --color-primario: #47489e;
+  --color-secundario: #4ba1ef;
+  --color-terciario: #7fde92;
+  --text-color: whitesmoke;
+}
+
+/* <header class="header">
+<nav class="header__nav nav--desktop">
+    <ul class="header__nav__list">
+        <li class="header__list-item"></li>
+    </ul>
+</nav>
+</header> */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color);
+  margin: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.header {
+  background-color: var(--color-primario);
+  width: 350px;
+  height: 100vh;
+  position: fixed;
+}
+.header-title {
+  margin: 0;
+  font-size: 2.5rem;
+}
+.header__list-item {
+  font-size: 2.5rem;
+  font-size: 2rem;
+}
+.header__nav__list {
+  list-style: none;
+}
+.header__list-item a i {
+  color: var(--color-secundario);
+}
