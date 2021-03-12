@@ -4,6 +4,7 @@
   --color-secundario: #4ba1ef;
   --color-terciario: #7fde92;
   --text-color: whitesmoke;
+  --text-color-dark: #555;
 }
 
 html {
@@ -78,7 +79,7 @@ section {
   float: right;
   width: calc(100% - 290px);
   height: 100vh;
-  background: violet;
+  background: var(--text-color);
 }
 /* Section home */
 .section-home {
@@ -95,6 +96,7 @@ section {
   border-radius: 50%;
   background: var(--color-secundario);
   overflow: hidden;
+  box-shadow: 3px 3px 8px rgb(51, 51, 51);
 }
 .section-home__img {
   max-width: 100%;
@@ -182,13 +184,169 @@ section {
 }
 
 /* Section about */
-/* <section class="section-about">
-        <h2 class="section-about__title">Sobre mi</h2>
-        <div class="section-about__card">
-            <div class="section-about__card__img-container"><img src="images/foto.png" alt="foto de rostro Marcelo Puppio" class="section-about__img"></div>    
+/* 
             <div class="section-about__card__presentacion-container">
-                <p class="section-about__card__presentacion-container__text">Hola! Estoy en búsqueda de mi primer trabajo como desarrollador web. Estoy a dos finales de recibirme como Analista de Sistemas y soy un estudiante empedernido, considerando que siempre hay algo nuevo por aprender o mejorar.</p>
-                <button class="section-about__card__presentacion-container__btn">Ver Currículum</button>
+                <div class="section-about__card__presentacion-container__info">
+                <p class="section-about__card__presentacion-container__info__text">Hola! Estoy en búsqueda de mi primer trabajo como desarrollador web. Estoy a dos finales de recibirme como Analista de Sistemas y soy un estudiante empedernido, considerando que siempre hay algo nuevo por aprender o mejorar.</p>
+                <button class="section-about__card__presentacion-container__info__btn">Ver Currículum</button>
+                </div>
+                <div class="section-about__card__presentacion-container__skills">
+                    <div class="section-about__card__presentacion-container__skills__img-container"><img src="images/foto.png" alt="foto de rostro Marcelo Puppio" class="section-about__card__presentacion-container__skills__img"></div>    
+                    <div class="section-about__card__presentacion-container__skills__img-container"><img src="images/foto.png" alt="foto de rostro Marcelo Puppio" class="section-about__card__presentacion-container__skills__img"></div>    
+                    <div class="section-about__card__presentacion-container__skills__img-container"><img src="images/foto.png" alt="foto de rostro Marcelo Puppio" class="section-about__card__presentacion-container__skills__img"></div>    
+                    <div class="section-about__card__presentacion-container__skills__img-container"><img src="images/foto.png" alt="foto de rostro Marcelo Puppio" class="section-about__card__presentacion-container__skills__img"></div>    
+                </div>
             </div>
-        </div>
     </section> */
+.section-about {
+  background: var(--text-color);
+  color: var(--text-color-dark);
+}
+.section-about__title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 30px 0 0 30px;
+}
+.section-about__card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 400px;
+}
+
+.section-about__card__img-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  /* clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); */
+  /* background: linear-gradient(45deg, var(--color-primario), var(--text-color)); */
+  background: var(--text-color-dark);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 3px 3px 8px rgb(51, 51, 51);
+}
+.section-about__img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(3px 3px 8px rgb(51, 51, 51));
+}
+.section-about__card__presentacion-container {
+  width: calc(100% - 350px);
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.section-about__card__presentacion-container__info {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  position: relative;
+  border-radius: 5px;
+  padding: 15px;
+  height: auto;
+  /* background: linear-gradient(
+    to right,
+    var(--color-terciario),
+    var(--color-secundario),
+    var(--color-primario)
+  ); */
+  z-index: 1;
+  box-shadow: 3px 3px 8px rgb(51, 51, 51);
+}
+.section-about__card__presentacion-container__info::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg);
+  position: absolute;
+  left: -20px;
+  top: 20px;
+  background: var(--color-terciario);
+  z-index: -1;
+}
+
+.section-about__card__presentacion-container__info__text {
+  color: var(--text-color-dark);
+  line-height: 2rem;
+  font-size: 1.2rem;
+  position: relative;
+  padding-left: 10px;
+  color: #222;
+}
+.section-about__card__presentacion-container__info__text::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  background: var(--text-color);
+  filter: opacity(0.3);
+}
+
+.section-about__card__presentacion-container__info__btn {
+  margin: 10px 0;
+  height: 50px;
+  width: 120px;
+  border: none;
+  transition: all 0.3s;
+  background: var(--color-secundario);
+  color: var(--text-color);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  box-shadow: 2px 2px 5px rgb(51, 51, 51), -1px -1px 2px #4ba0efad;
+}
+.section-about__card__presentacion-container__skills {
+  flex-basis: 50%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  position: relative;
+}
+.section-about__card__presentacion-container__skills__img-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #252525;
+  background: var(--color-primario);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 5px;
+}
+.section-about__card__presentacion-container__skills__img-container:nth-child(3n
+    + 2) {
+  background: var(--color-secundario);
+}
+.section-about__card__presentacion-container__skills__img-container:nth-child(3n
+    + 3) {
+  background: var(--color-terciario);
+}
+.section-about__card__presentacion-container__skills__img {
+  max-width: 60%;
+  height: auto;
+  transition: all 0.6s ease-in-out;
+}
+.skills__text {
+  position: absolute;
+  color: var(--text-color-dark);
+  font-weight: bold;
+  background: var(--text-color);
+  padding: 2px 3px;
+  transition: all 0.6s;
+  opacity: 0;
+}
+.section-about__card__presentacion-container__skills__img-container:hover
+  > .skills__text {
+  display: block;
+  opacity: 1;
+}
+.section-about__card__presentacion-container__skills__img-container:hover
+  > .section-about__card__presentacion-container__skills__img {
+  filter: opacity(0.5);
+  transform: scale(1.3);
+}
