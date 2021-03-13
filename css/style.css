@@ -184,20 +184,7 @@ section {
 }
 
 /* Section about */
-/* 
-            <div class="section-about__card__presentacion-container">
-                <div class="section-about__card__presentacion-container__info">
-                <p class="section-about__card__presentacion-container__info__text">Hola! Estoy en búsqueda de mi primer trabajo como desarrollador web. Estoy a dos finales de recibirme como Analista de Sistemas y soy un estudiante empedernido, considerando que siempre hay algo nuevo por aprender o mejorar.</p>
-                <button class="section-about__card__presentacion-container__info__btn">Ver Currículum</button>
-                </div>
-                <div class="section-about__card__presentacion-container__skills">
-                    <div class="section-about__card__presentacion-container__skills__img-container"><img src="images/foto.png" alt="foto de rostro Marcelo Puppio" class="section-about__card__presentacion-container__skills__img"></div>    
-                    <div class="section-about__card__presentacion-container__skills__img-container"><img src="images/foto.png" alt="foto de rostro Marcelo Puppio" class="section-about__card__presentacion-container__skills__img"></div>    
-                    <div class="section-about__card__presentacion-container__skills__img-container"><img src="images/foto.png" alt="foto de rostro Marcelo Puppio" class="section-about__card__presentacion-container__skills__img"></div>    
-                    <div class="section-about__card__presentacion-container__skills__img-container"><img src="images/foto.png" alt="foto de rostro Marcelo Puppio" class="section-about__card__presentacion-container__skills__img"></div>    
-                </div>
-            </div>
-    </section> */
+
 .section-about {
   background: var(--text-color);
   color: var(--text-color-dark);
@@ -263,7 +250,9 @@ section {
   position: absolute;
   left: -20px;
   top: 20px;
-  background: var(--color-terciario);
+  border-left: solid #e5e5e5 2px;
+  border-bottom: solid #e5e5e5 2px;
+  background: var(--text-color);
   z-index: -1;
 }
 
@@ -298,17 +287,49 @@ section {
   font-size: 0.9rem;
   box-shadow: 2px 2px 5px rgb(51, 51, 51), -1px -1px 2px #4ba0efad;
 }
-.section-about__card__presentacion-container__skills {
-  flex-basis: 50%;
+
+/* <section class="section-skills" id="services">
+<h2 class="section-skills__title">Conocimientos</h2>
+<div class="section-skills__card__presentacion-container__skills">
+<div class="section-skills__card__presentacion-container__skills__img-container"><img src="images/skills/html.png" alt="foto de rostro Marcelo Puppio" class="section-skills__card__presentacion-container__skills__img"><span class="skills__text">HTML 5</span></div>    
+<div class="section-skills__card__presentacion-container__skills__img-container"><img src="images/skills/css.png" alt="foto de rostro Marcelo Puppio" class="section-skills__card__presentacion-container__skills__img"><span class="skills__text">CSS 3</span></div>    
+<div class="section-skills__card__presentacion-container__skills__img-container"><img src="images/skills/js.png" alt="foto de rostro Marcelo Puppio" class="section-skills__card__presentacion-container__skills__img"><span class="skills__text">JavaScript</span></div>    
+<div class="section-skills__card__presentacion-container__skills__img-container"><img src="images/skills/react.png" alt="foto de rostro Marcelo Puppio" class="section-skills__card__presentacion-container__skills__img"><span class="skills__text">React JS</span></div>    
+<div class="section-skills__card__presentacion-container__skills__img-container"><img src="images/skills/firebase.png" alt="foto de rostro Marcelo Puppio" class="section-skills__card__presentacion-container__skills__img"><span class="skills__text">Firebase</span></div>    
+<div class="section-skills__card__presentacion-container__skills__img-container"><img src="images/skills/sass.png" alt="foto de rostro Marcelo Puppio" class="section-skills__card__presentacion-container__skills__img"><span class="skills__text">Sass</span></div>    
+<div class="section-skills__card__presentacion-container__skills__img-container"><img src="images/skills/sql.png" alt="foto de rostro Marcelo Puppio" class="section-skills__card__presentacion-container__skills__img"><span class="skills__text">SQL Server</span></div>    
+<div class="section-skills__card__presentacion-container__skills__img-container"><img src="images/skills/bootstrap.png" alt="foto de rostro Marcelo Puppio" class="section-skills__card__presentacion-container__skills__img"><span class="skills__text">Bootstrap 4</span></div>    
+<div class="section-skills__card__presentacion-container__skills__img-container"><img src="images/skills/csharp.png" alt="foto de rostro Marcelo Puppio" class="section-skills__card__presentacion-container__skills__img"><span class="skills__text">C# POO</span></div>    
+
+</div>
+</section> */
+
+.section-skills {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.section-skills__title {
+  color: var(--text-color-dark);
+  text-align: center;
+  font-size: 2.2rem;
+  flex-basis: 100%;
+}
+
+.section-skills__card__presentacion-container__skills {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  width: 700px;
   justify-content: space-evenly;
   position: relative;
 }
-.section-about__card__presentacion-container__skills__img-container {
+
+.section-skills__card__presentacion-container__skills__img-container {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   background: #252525;
   background: var(--color-primario);
   overflow: hidden;
@@ -316,17 +337,19 @@ section {
   justify-content: center;
   align-content: center;
   align-items: center;
-  margin: 5px;
+  margin: 30px 50px;
+  box-shadow: 3px 3px 8px rgb(51, 51, 51);
 }
-.section-about__card__presentacion-container__skills__img-container:nth-child(3n
+.section-skills__card__presentacion-container__skills__img-container:nth-child(3n
     + 2) {
   background: var(--color-secundario);
+  border-radius: 50%;
 }
-.section-about__card__presentacion-container__skills__img-container:nth-child(3n
+.section-skills__card__presentacion-container__skills__img-container:nth-child(3n
     + 3) {
   background: var(--color-terciario);
 }
-.section-about__card__presentacion-container__skills__img {
+.section-skills__card__presentacion-container__skills__img {
   max-width: 60%;
   height: auto;
   transition: all 0.6s ease-in-out;
@@ -340,13 +363,63 @@ section {
   transition: all 0.6s;
   opacity: 0;
 }
-.section-about__card__presentacion-container__skills__img-container:hover
+.section-skills__card__presentacion-container__skills__img-container:hover
   > .skills__text {
   display: block;
   opacity: 1;
 }
-.section-about__card__presentacion-container__skills__img-container:hover
-  > .section-about__card__presentacion-container__skills__img {
+.section-skills__card__presentacion-container__skills__img-container:hover
+  > .section-skills__card__presentacion-container__skills__img {
   filter: opacity(0.5);
   transform: scale(1.3);
+}
+/* <section class="section-projects">
+<h2 class="section-projects__title">Mis trabajos</h2>
+<div class="section-projects__cards-container">
+    <div class=".section-projects__card-container">
+        <img class="card-container__img" src="" alt="">
+        <span class="card-container__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore expedita perspiciatis ea, dolorem unde iusto dolores ipsam, corrupti dolorum ipsum earum autem velit blanditiis officiis. Provident enim officiis aut ea?</span>
+    </div>
+</div>
+</section> */
+.section-projects {
+  color: var(--text-color-dark);
+  display: flex;
+  flex-flow: column wrap;
+}
+.section-projects__title {
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+.section-projects__cards-container {
+  width: 100%;
+  height: auto;
+}
+.section-projects__card-container {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  background: red;
+  position: relative;
+  overflow: hidden;
+}
+.card-container__img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.card-container__description {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  transition: all 0.5s;
+  opacity: 0;
+  /* display: none; */
+}
+.card-container__description:hover {
+  opacity: 1;
+  top: 0;
 }
